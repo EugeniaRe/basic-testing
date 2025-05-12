@@ -40,14 +40,14 @@ describe('simpleCalculator tests', () => {
   });
 
   test('should return null for invalid action', () => {
-    expect(simpleCalculator({ a: 2, b: 3, action: '@' })).toBe(null);
-    expect(simpleCalculator({ a: 2, b: 3, action: null })).toBe(null);
+    expect(simpleCalculator({ a: 2, b: 3, action: '@' })).toBeNull();
+    expect(simpleCalculator({ a: 2, b: 3, action: null })).toBeNull();
   });
 
   test('should return null for invalid arguments', () => {
-    expect(simpleCalculator({ a: 'a', b: 'b', action: Action.Add })).toBe(null);
-    expect(simpleCalculator({ a: 'a', b: null, action: Action.Add })).toBe(
-      null,
-    );
+    expect(simpleCalculator({ a: 'a', b: 'b', action: Action.Add })).toBeNull();
+    expect(
+      simpleCalculator({ a: 'a', b: null, action: Action.Add }),
+    ).toBeNull();
   });
 });
